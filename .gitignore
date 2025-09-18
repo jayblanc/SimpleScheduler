@@ -1,0 +1,6 @@
+# Project exclude paths
+/scheduler-api/target/
+/scheduler-core/target/
+/scheduler-features/target/
+/scheduler-itests/target/
+/scheduler-samples/scheduler-periodic-task-sample/target/
