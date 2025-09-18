@@ -1,4 +1,4 @@
-# MyScheduler
+# SimpleScheduler
 
 A powerful and flexible OSGi-based task scheduler for Apache Karaf with annotation-driven simplicity and programmatic API support.
 
@@ -23,7 +23,7 @@ Deploy the scheduler feature in your Karaf container:
 feature:repo-add mvn:org.jahia.features/scheduler-features/1.0.0-SNAPSHOT/xml/features
 
 # Install the scheduler
-feature:install myscheduler
+feature:install simple-scheduler
 ```
 
 ### 2. Annotation-Based Scheduling (Recommended)

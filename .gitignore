@@ -1,6 +1,16 @@
 # Project exclude paths
-/scheduler-api/target/
-/scheduler-core/target/
-/scheduler-features/target/
-/scheduler-itests/target/
-/scheduler-samples/scheduler-periodic-task-sample/target/
+/.idea/
+
+# Ignore all target folders at any level
+**/target/
+
+# Common values
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+.env
+.vscode/
+*.bak
+*.old

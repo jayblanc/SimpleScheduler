@@ -85,9 +85,9 @@ public class SchedulerIntegrationTest extends KarafTestSupport {
     public void testSchedulerService() throws Exception {
         LOGGER.info("Testing scheduler service");
 
-        // Install MyScheduler feature
+        // Install SimpleScheduler feature
         addFeaturesRepository(maven("org.jahia.features", "scheduler-features").type("xml").classifier("features").version("1.0.0-SNAPSHOT").getURL());
-        installAndAssertFeature("myscheduler");
+        installAndAssertFeature("simple-scheduler");
 
         // Check that bundle exists and retrieve the service
         assertSchedulerBundleExists();
@@ -146,7 +146,7 @@ public class SchedulerIntegrationTest extends KarafTestSupport {
         LOGGER.info("Scheduled cron executed {} times", periodicTasksService.getCronCpt());
         assertTrue("Scheduled cron should have been executed at least 1 times", periodicTasksService.getCronCpt() >= 1);
         LOGGER.info("Timeout called {} times", periodicTasksService.getTimeoutCpt());
-        assertTrue("Timeout should have NOT been called yet", periodicTasksService.getTimeoutCpt() == 0);
+        assertEquals("Timeout should have NOT been called yet", 0, periodicTasksService.getTimeoutCpt());
 
         //Wait for timeout to occur
         LOGGER.info("5. Waiting for timeout to occurred...");
@@ -187,14 +187,14 @@ public class SchedulerIntegrationTest extends KarafTestSupport {
     }
 
     private String getBundleStateAsString(int state) {
-        switch (state) {
-            case Bundle.UNINSTALLED: return "UNINSTALLED";
-            case Bundle.INSTALLED: return "INSTALLED";
-            case Bundle.RESOLVED: return "RESOLVED";
-            case Bundle.STARTING: return "STARTING";
-            case Bundle.STOPPING: return "STOPPING";
-            case Bundle.ACTIVE: return "ACTIVE";
-            default: return "UNKNOWN (" + state + ")";
-        }
+        return switch (state) {
+            case Bundle.UNINSTALLED -> "UNINSTALLED";
+            case Bundle.INSTALLED -> "INSTALLED";
+            case Bundle.RESOLVED -> "RESOLVED";
+            case Bundle.STARTING -> "STARTING";
+            case Bundle.STOPPING -> "STOPPING";
+            case Bundle.ACTIVE -> "ACTIVE";
+            default -> "UNKNOWN (" + state + ")";
+        };
     }
 }

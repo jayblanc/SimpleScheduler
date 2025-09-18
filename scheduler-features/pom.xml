@@ -54,7 +54,7 @@
                                 <feature>framework</feature>
                             </framework>
                             <features>
-                                <feature>myscheduler</feature>
+                                <feature>simple-scheduler</feature>
                             </features>
                             <ignoreMissingConditions>true</ignoreMissingConditions>
                         </configuration>
