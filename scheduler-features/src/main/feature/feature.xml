@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.6.0 https://karaf.apache.org/xmlns/features/v1.6.0" name="simple-scheduler-features">
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.6.0 https://karaf.apache.org/xmlns/features/v1.6.0" name="scheduler-features">
 
     <feature name="simple-scheduler" version="${project.version}">
-        <details>SimpleScheduler Feature for Karaf</details>
+        <details>Simple Scheduler Feature for Karaf</details>
         <feature prerequisite="true">scr</feature>
-        <bundle>mvn:org.jahia.features/scheduler-api/${project.version}</bundle>
-        <bundle>mvn:org.jahia.features/scheduler-core/${project.version}</bundle>
+        <bundle>mvn:org.jahia.features.scheduler/scheduler-api/${project.version}</bundle>
+        <bundle>mvn:org.jahia.features.scheduler/scheduler-core/${project.version}</bundle>
     </feature>
 
     <feature name="scheduler-periodic-task-sample" version="${project.version}">
         <feature>simple-scheduler</feature>
-        <bundle>mvn:org.jahia.features/scheduler-periodic-task-sample/${project.version}</bundle>
+        <bundle>mvn:org.jahia.features.scheduler/scheduler-periodic-task-sample/${project.version}</bundle>
     </feature>
 </features>

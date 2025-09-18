@@ -86,7 +86,7 @@ public class SchedulerIntegrationTest extends KarafTestSupport {
         LOGGER.info("Testing scheduler service");
 
         // Install SimpleScheduler feature
-        addFeaturesRepository(maven("org.jahia.features", "scheduler-features").type("xml").classifier("features").version("1.0.0-SNAPSHOT").getURL());
+        addFeaturesRepository(maven("org.jahia.features.scheduler", "scheduler-features").type("xml").classifier("features").version("1.0.0-SNAPSHOT").getURL());
         installAndAssertFeature("simple-scheduler");
 
         // Check that bundle exists and retrieve the service
