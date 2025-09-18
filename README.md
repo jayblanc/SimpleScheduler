@@ -20,7 +20,7 @@ Deploy the scheduler feature in your Karaf container:
 
 ```bash
 # Add the features repository
-feature:repo-add mvn:org.jahia.features/scheduler-features/1.0.0-SNAPSHOT/xml/features
+feature:repo-add mvn:org.jahia.features.scheduler/scheduler-features/1.0.0-SNAPSHOT/xml/features
 
 # Install the scheduler
 feature:install simple-scheduler
